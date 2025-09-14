@@ -1,43 +1,42 @@
 package states;
+import flixel.text.FlxText;
+import flixel.FlxSprite;
 
 class OutdatedState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
 
 	var warnText:FlxText;
+	var disclaimerText:FlxText;
 	override function create()
-	{
-		super.create();
+{
+    super.create();
+    var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+    add(bg);
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		add(bg);
+    // gracias documentacion de flixel
+    var image:FlxSprite = new FlxSprite(0, 0, Paths.image('tralalerotralala'));
+    image.screenCenter();
+    add(image);
 
-		var guh:String;
-		final bro:String = #if mobile 'kiddo' #else 'bro' #end;
-		final escape:String = (controls.mobileC) ? 'B' : 'ESCAPE';
+    // Modify the text to show the disclaimer
+    var disclaimerText:String = "ATTENTION! This is just a demo and all the content shown in it was created for mere humorous purposes and is not intended to be taken seriously, please, we do not want any problems. THANK YOU FOR YOUR ATTENTION!";
+    warnText = new FlxText(0, 0, FlxG.width, disclaimerText, 32);
+    warnText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER);
+    warnText.screenCenter(Y);
+    add(warnText);
 
-		guh = "Sup "+bro+", looks like you're running an   \n
-		outdated version of P-Slice Engine (" + MainMenuState.pSliceVersion + "),\n
-		please update to " + TitleState.updateVersion + "!\n
-		Press "+escape+" to proceed anyway.\n
-		\n
-		Thank you for using the Engine!";
-
-		warnText = new FlxText(0, 0, FlxG.width, guh, 32);
-		warnText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER);
-		warnText.screenCenter(Y);
-		add(warnText);
-		#if TOUCH_CONTROLS_ALLOWED
-		addTouchPad('NONE', 'A_B');
-		#end
-	}
+    #if TOUCH_CONTROLS_ALLOWED
+    addTouchPad('NONE', 'A_B');
+    #end
+}
 
 	override function update(elapsed:Float)
 	{
 		if(!leftState) {
 			if (controls.ACCEPT) {
 				leftState = true;
-				CoolUtil.browserLoad("https://github.com/Psych-Slice/P-Slice/releases");
+				CoolUtil.browserLoad("https://es.memedroid.com/memes/detail/4581589");
 			}
 			else if(controls.BACK) {
 				leftState = true;
