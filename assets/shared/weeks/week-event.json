@@ -1,0 +1,54 @@
+{
+	"songs": [
+		[
+			"Waiting the Day",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"The Rush",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Fake Alarm",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"The Tournament",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "discord",
+	"difficulties": "",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Finnaly",
+	"weekName": "The Event",
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}
